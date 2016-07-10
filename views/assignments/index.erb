@@ -1,0 +1,7 @@
+<h3>Assignments</h3>
+<ul>
+  <% if @assignments then @assignments.each do |a| %>
+    <li><a href="groups/:group_id/assignments/:id"><%= a.number %></a></li>
+  <% end %>
+  <% end %>
+</ul>
