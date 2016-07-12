@@ -70,6 +70,10 @@ class SinatraWarden < Sinatra::Base
     def logged_in?
       current_user ? true : false
     end
+
+    def username
+      current_user.username
+    end
   end
 
   # Routes
@@ -186,7 +190,7 @@ class SinatraWarden < Sinatra::Base
 
 
   # Users
-  get '/users/profile' do
+  get "/users/profile" do
     # List links to all users' assignments
 
     # display link to edit user info
@@ -203,7 +207,7 @@ class SinatraWarden < Sinatra::Base
   end
 
   # Assignments
-  get '/groups/:group_id/assignments/index' do
+  get '/groups/:group_id/assignments' do
     erb :'assignments/index'
   end
 
